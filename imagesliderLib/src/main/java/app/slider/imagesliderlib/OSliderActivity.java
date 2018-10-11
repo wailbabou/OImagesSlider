@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -23,8 +24,9 @@ public class OSliderActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
+    private RelativeLayout relativeLayout;
     private TextView[] dots;
-    OConfig constants;
+    private OConfig constants;
 
 
     @Override
@@ -37,16 +39,25 @@ public class OSliderActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_o_slider);
         constants = new Gson().fromJson(getIntent().getStringExtra("data"),OConfig.class);
-
-        viewPager = findViewById(R.id.view_pager);
-        dotsLayout =  findViewById(R.id.layoutDots);
+        initViews();
 
         setupViewPager(viewPager);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
-
         viewPager.setCurrentItem(constants.getCurrentImg());
         addBottomDots(constants.getCurrentImg());
+
+
+    }
+    public void initViews(){
+        viewPager = findViewById(R.id.view_pager);
+        dotsLayout =  findViewById(R.id.layoutDots);
+        relativeLayout = findViewById(R.id.rel);
+
+        if(constants.getBackGroundColor()!=-99){
+            relativeLayout.setBackgroundColor(constants.getBackGroundColor());
+        }
+
     }
 
 
@@ -74,11 +85,11 @@ public class OSliderActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         if(constants.getImagesUrls().size()>0){
             for(int i=0 ; i<constants.getImagesUrls().size();i++){
-                adapter.addFrag(new OSingleFragment(constants.getImagesUrls().get(i)));
+                adapter.addFrag(new OSingleFragment(constants.getImagesUrls().get(i),constants.getPlaceholder()));
             }
         }else if (constants.getImagesURIs().size()>0){
             for(int i=0 ; i<constants.getImagesURIs().size();i++){
-                adapter.addFrag(new OSingleFragment(constants.getImagesURIs().get(i)));
+                adapter.addFrag(new OSingleFragment(constants.getImagesURIs().get(i),constants.getPlaceholder()));
             }
         }
         viewPager.setAdapter(adapter);

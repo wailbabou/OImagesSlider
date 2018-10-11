@@ -31,6 +31,14 @@ public class OImageSlider {
         constants.setCurrentImg(position);
         return  this;
     }
+    public OImageSlider setPlaceholder(int placeholder){
+        constants.setPlaceholder(placeholder);
+        return  this;
+    }
+    public OImageSlider setBackgroundColor(int color){
+        constants.setBackGroundColor(color);
+        return  this;
+    }
     public void start(Context context,int requestCode){
         Intent ii = new Intent(context,OSliderActivity.class);
         ii.putExtra("data",new Gson().toJson(constants));

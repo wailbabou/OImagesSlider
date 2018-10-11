@@ -20,17 +20,22 @@ public class OSingleFragment extends Fragment {
     private PhotoView picture;
     private String imgUrl;
     private Uri imgUri;
+    private int placeholder = R.drawable.placeholder;
 
     public OSingleFragment(){
     }
 
     @SuppressLint("ValidFragment")
-    public OSingleFragment(String url){
+    public OSingleFragment(String url,int placeholder){
         imgUrl=url;
+        if(placeholder!=-99)
+            this.placeholder = placeholder;
     }
     @SuppressLint("ValidFragment")
-    public OSingleFragment(Uri uri){
+    public OSingleFragment(Uri uri,int placeholder){
         imgUri=uri;
+        if(placeholder!=-99)
+            this.placeholder = placeholder;
     }
     @Nullable
     @Override

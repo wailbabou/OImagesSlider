@@ -10,7 +10,8 @@ public class OConfig {
     private ArrayList<Uri> imagesURIs = new ArrayList<>() ;
     private int colorActive,colorInactive;
     private  int currentImg=0;
-
+    private int backGroundColor=-99;
+    private int placeholder=-99;
 
     public ArrayList<String> getImagesUrls() {
         return imagesUrls;
@@ -50,5 +51,21 @@ public class OConfig {
 
     public void setCurrentImg(int currentImg) {
         this.currentImg = currentImg;
+    }
+
+    public int getBackGroundColor() {
+        return backGroundColor;
+    }
+
+    public void setBackGroundColor(int backGroundColor) {
+        this.backGroundColor = backGroundColor;
+    }
+
+    public int getPlaceholder() {
+        return placeholder;
+    }
+
+    public void setPlaceholder(int placeholder) {
+        this.placeholder = placeholder;
     }
 }
