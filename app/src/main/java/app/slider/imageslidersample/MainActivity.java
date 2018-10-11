@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void putImgs(){
-        imgs.add("https://image.flaticon.com/sprites/new_packs/1189106-friendship.png");
-        imgs.add("https://image.flaticon.com/sprites/new_packs/1149162-internet-service.png");
-        imgs.add("https://image.flaticon.com/sprites/new_packs/1183640-internet-technology.png");
+        imgs.add("https://cdn.dribbble.com/users/31664/screenshots/5380874/image.png");
+        imgs.add("https://cdn.dribbble.com/users/418188/screenshots/5381692/design_workspace_illustration_tubik_4x.png");
+        imgs.add("https://cdn.dribbble.com/users/59947/screenshots/5381911/muti.jpg");
     }
 
     public void startSlider(){
