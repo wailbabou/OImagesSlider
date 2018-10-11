@@ -39,10 +39,10 @@ public class OImageSlider {
         constants.setBackGroundColor(color);
         return  this;
     }
-    public void start(Context context,int requestCode){
+    public void start(Context context){
         Intent ii = new Intent(context,OSliderActivity.class);
         ii.putExtra("data",new Gson().toJson(constants));
-        ((AppCompatActivity)context).startActivityForResult(ii,requestCode);
+        context.startActivity(ii);
     }
 
 }

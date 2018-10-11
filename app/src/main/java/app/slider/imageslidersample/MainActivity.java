@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 .setColorInactive(Color.GRAY) // bottom indicator inactive color
                 .setImageUrls(imgs) // arraylist of image urls
                 .setCurrentImage(1) // the selected image ( starting from 0 )
-                .setBackgroundColor(Color.BLACK)
-                .start(this,99);
+                .setBackgroundColor(Color.BLACK) // background color of activity
+                .start(this);
 
     }
 }
