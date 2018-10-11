@@ -24,7 +24,7 @@ public class OSliderActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
     private TextView[] dots;
-    OConstants constants;
+    OConfig constants;
 
 
     @Override
@@ -36,7 +36,7 @@ public class OSliderActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_o_slider);
-        constants = new Gson().fromJson(getIntent().getStringExtra("data"),OConstants.class);
+        constants = new Gson().fromJson(getIntent().getStringExtra("data"),OConfig.class);
 
         viewPager = findViewById(R.id.view_pager);
         dotsLayout =  findViewById(R.id.layoutDots);
@@ -45,8 +45,8 @@ public class OSliderActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
 
-        viewPager.setCurrentItem(0);
-        addBottomDots(0);
+        viewPager.setCurrentItem(constants.getCurrentImg());
+        addBottomDots(constants.getCurrentImg());
     }
 
 

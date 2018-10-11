@@ -5,10 +5,11 @@ import android.net.Uri;
 
 import java.util.ArrayList;
 
-public class OConstants {
+public class OConfig {
     private ArrayList<String> imagesUrls = new ArrayList<>();
     private ArrayList<Uri> imagesURIs = new ArrayList<>() ;
     private int colorActive,colorInactive;
+    private  int currentImg=0;
 
 
     public ArrayList<String> getImagesUrls() {
@@ -41,5 +42,13 @@ public class OConstants {
 
     public void setColorInactive(int colorInactive) {
         this.colorInactive = colorInactive;
+    }
+
+    public int getCurrentImg() {
+        return currentImg;
+    }
+
+    public void setCurrentImg(int currentImg) {
+        this.currentImg = currentImg;
     }
 }

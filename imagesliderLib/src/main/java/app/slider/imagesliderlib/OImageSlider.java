@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class OImageSlider {
-    private OConstants constants  = new OConstants();
+    private OConfig constants  = new OConfig();
     public OImageSlider setColorActive(int color){
         constants.setColorActive(color);
         return  this;
@@ -25,6 +25,10 @@ public class OImageSlider {
     }
     public OImageSlider setImageURIs(ArrayList<Uri> imgs){
         constants.setImagesURIs(imgs);
+        return  this;
+    }
+    public OImageSlider setCurrentImage(int position){
+        constants.setCurrentImg(position);
         return  this;
     }
     public void start(Context context,int requestCode){

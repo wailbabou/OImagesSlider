@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void startSlider(){
         OImageSlider oImageSlider = new OImageSlider();
-        oImageSlider.setColorActive(Color.WHITE)
-                .setColorInactive(Color.GRAY)
-                .setImageUrls(imgs)
+        oImageSlider.setColorActive(Color.WHITE) //bottom indicator active color
+                .setColorInactive(Color.GRAY) // bottom indicator inactive color
+                .setImageUrls(imgs) // arraylist of image urls
+                .setCurrentImage(1) // the selected image ( starting from 0 )
                 .start(this,99);
 
     }
