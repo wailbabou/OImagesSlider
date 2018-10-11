@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.github.chrisbanes.photoview.PhotoView;
 
 
@@ -52,10 +55,19 @@ public class OSingleFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .placeholder(placeholder)
+                .error(placeholder)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .priority(Priority.HIGH)
+                .dontAnimate()
+                .dontTransform();
+
         if(imgUrl!=null){
-            Glide.with(this).load(imgUrl).into(picture);
+            Glide.with(this).load(imgUrl).apply(options).into(picture);
         }else if(imgUri!=null){
-            Glide.with(this).load(imgUri).into(picture);
+            Glide.with(this).load(imgUri).apply(options).into(picture);
         }
 
     }
