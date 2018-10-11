@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.slider.imagesliderlib" >
+
+    <application>
+        <activity android:name=".OSliderActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+    </application>
+</manifest>
