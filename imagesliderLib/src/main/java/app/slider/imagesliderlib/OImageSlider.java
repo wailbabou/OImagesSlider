@@ -3,7 +3,6 @@ package app.slider.imagesliderlib;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
